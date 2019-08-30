@@ -6,25 +6,21 @@ require 'pry'
 
 class EmailAddressParser
   
-  @@emails = []
+  attr_accessor :emails 
     
   def initialize(emails)
-    @@emails.clear
-    @@emails << emails
+    @emails = emails 
   end 
   
   def parse
     parse = []
-    @@emails.each do |email|
-      email = email.split(/[ ,]/)
-      email = email.join(" ")
-      email = email.split
-      
-      email.each do |email|
+    emails = @emails.split(/[ ,]/)
+    emails = emails.join(" ")
+    emails = emails.split
+    emails.each do |email|
         if !parse.include?(email)
           parse << email
-        end
-      end 
+      end
     end 
     parse 
   end 
