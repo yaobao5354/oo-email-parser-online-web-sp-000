@@ -14,9 +14,17 @@ class EmailAddressParser
   
   def parse
     parse = []
+<<<<<<< HEAD
     emails = @emails.split(/[ ,]/)
     emails = emails.join(" ")
     emails = emails.split
+=======
+    binding.pry
+    emails = @emails.split(/[ ,]/)
+    emails = emails.join(" ")
+    emails = emails.split
+      
+>>>>>>> 61668874e267493ee33bf3464d72b10928cc83d7
     emails.each do |email|
         if !parse.include?(email)
           parse << email
